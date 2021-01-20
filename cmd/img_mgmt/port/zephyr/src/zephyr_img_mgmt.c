@@ -336,7 +336,7 @@ img_mgmt_impl_erase_image_data(unsigned int off, unsigned int num_bytes)
 
     rc = flash_get_page_info_by_offs(dev, fa->fa_off + num_bytes -1, &page);
     if (rc != 0) {
-        LOG_ERR("bad offset (0x%x)", fa->fa_off + num_bytes -1);
+        LOG_ERR("bad offset (0x%x)", (unsigned int)(fa->fa_off + num_bytes -1));
         rc = MGMT_ERR_EUNKNOWN;
         goto end_fa;
     }
